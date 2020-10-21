@@ -1,35 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="list">
+  <p id="notice"><%= notice %></p>
 
-<h1>Список товаров</h1>
+  <h1>Список товаров</h1>
 
-<table>
-  <% @products.each do |product| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-      <td>
-        <%= image_tag(product.image_url, class: 'list_image') %>
-      </td>
+  <table>
+    <% @products.each do |product| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td>
+          <%= image_tag(product.image_url, class: 'list_image', title: 'Аватар отсутствует.') %>
+        </td>
 
-      <td class="list_description">
-        <dl>
-          <dt><%= product.title %></dt>
+        <td class="list_description">
+          <dl>
+            <dt><%= product.title %></dt>
+            <br>
+            <dt><%= truncate(strip_tags(product.description), length: 80) %></dt>
+            <br>
+            <dt><%= product.price %> руб.</dt>
+          </dl>
+        </td>
+
+        <td class="list_actions">
+          <%= link_to 'Показать', product %>
           <br>
-          <dt><%= truncate(strip_tags(product.description), length: 80) %></dt>
+          <%= link_to 'Редактировать', edit_product_path(product) %>
           <br>
-          <dt><%= product.price %> руб.</dt>
-        </dl>
-      </td>
+          <%= link_to 'Удалить', product, method: :delete, data: {confirm: 'Вы уверены?'} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+  <%= link_to 'Добавить', new_product_path %>
+</div>
 
-      <td class="list_actions">
-        <%= link_to 'Показать', product %>
-        <br>
-        <%= link_to 'Редактировать', edit_product_path(product) %>
-        <br>
-        <%= link_to 'Удалить', product, method: :delete, data: {confirm: 'Вы уверены?'} %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<br>
-
-<%= link_to 'Добавить', new_product_path %>

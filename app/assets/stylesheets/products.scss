@@ -3,7 +3,7 @@
     border-collapse: collapse;
   }
   table tr td {
-    padding: 5px;
+    padding: 10px;
     vertical-align: top;
   }
   .list_image {
@@ -30,9 +30,11 @@
     padding-left: 1em;
   }
   .list_line_even {
-    background: #e0f8f8;
+    background: #b5ff87;
+    border: 1px solid black;
   }
   .list_line_odd {
-    background: #f8b0f8;
+    background: #ffca80;
+    border: 1px solid black;
   }
 }

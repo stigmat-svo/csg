@@ -14,6 +14,7 @@ gem 'listen'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'russian'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'rmagick'
@@ -24,7 +25,7 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'dotenv-rails'
 gem 'pundit'
 gem 'resque'
-gem 'sendgrid-ruby'
+
 
 group :production do
   gem 'pg'
@@ -47,5 +48,5 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
