@@ -16,7 +16,7 @@
             <br>
             <dt><%= truncate(strip_tags(product.description), length: 80) %></dt>
             <br>
-            <dt><%= product.price %> руб.</dt>
+            <dt><%= number_to_currency(product.price) %></dt>
           </dl>
         </td>
 
@@ -31,6 +31,7 @@
     <% end %>
   </table>
   <br>
-  <%= link_to 'Добавить', new_product_path %>
+ <p><%= link_to 'Добавить', new_product_path %></p>
+  <p><%= link_to 'На главную', store_index_path %></p>
 </div>
 

@@ -11,6 +11,23 @@
 </head>
 
 <body class="<%= controller.controller_name %>">
-<%= yield %>
+
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "CSG Service" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <ul>
+      <li><a href="">Главная</a></li>
+      <li><a href="">Вопросы</a></li>
+      <li><a href="">Новости</a></li>
+      <li><a href="">Контакты</a></li>
+    </ul>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>
