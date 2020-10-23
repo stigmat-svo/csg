@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Корзина</h1>
+
+<ul style="list-style: none;">
+  <% @cart.line_items.each do |item| %>
+  <li><%= item.product.title %></li>
+  <li><%= image_tag(item.product.image_url) %></li>
+  <li><%= number_to_currency(item.product.price) %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Редактировать', edit_cart_path(@cart) %> </p>
+<p><%= link_to 'Назад', carts_path %></p>
+<p><%= link_to 'На главную', store_index_path %></p>

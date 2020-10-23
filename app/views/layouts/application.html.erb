@@ -13,21 +13,14 @@
 <body class="<%= controller.controller_name %>">
 
 <div id="banner">
-  <%= image_tag("logo.png") %>
   <%= @page_title || "CSG Service" %>
 </div>
 <div id="columns">
-  <div id="side">
-    <ul>
-      <li><a href="">Главная</a></li>
-      <li><a href="">Вопросы</a></li>
-      <li><a href="">Новости</a></li>
-      <li><a href="">Контакты</a></li>
-    </ul>
-  </div>
+  <div id="side"></div>
   <div id="main">
     <%= yield %>
   </div>
+  <div id="side2"></div>
 </div>
 </body>
 </html>

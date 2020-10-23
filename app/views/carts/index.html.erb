@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ваши покупки</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <ol>
+    <% @carts.each do |cart| %>
+
+      <li>
+        <%= link_to 'Показать', cart %>
+        <%= link_to 'Редактировать', edit_cart_path(cart) %>
+        <%= link_to 'Удалить', cart, method: :delete, data: {confirm: 'Вы уверены?'} %>
+      </li>
+
+    <% end %>
+  </ol>
+</table>
+
+<br>
+
+<p><%= link_to 'Новая корзина', new_cart_path %></p>
+<p><%= link_to 'На главную', store_index_path %></p>
