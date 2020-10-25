@@ -1,25 +1,5 @@
-<h1>Ваша корзина</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-  <% @cart.line_items.each do |item| %>
-    <tr>
-      <td><%= item.product.title %> &times; <%= item.quantity %> шт.</td>
-      <td></td>
-      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
-    </tr>
-  <% end %>
-  <br>
-  <tr class="total_line">
-    <td class="total_cell" colspan="2">Всего:</td>
-    <td class="total_cell">
-      <%= number_to_currency(@cart.total_price) %>
-    </td>
-  </tr>
-</table>
-
-<%= button_to 'Очистить корзину', @cart, method: :delete,
-              data: {confirm: 'Вы уверены?'} %>
+<%= render @cart %>
 
 
-<p><%= link_to 'Назад', carts_path %></p>
-<p><%= link_to 'На главную', store_index_path %></p>

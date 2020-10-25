@@ -28,7 +28,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_url }
+        format.js { @current_item = @line_item }
         format.json { render action: 'show',
                              status: :created, location: @line_item }
       else
@@ -51,7 +52,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   def destroy
     @line_item.destroy
-    redirect_to line_items_url, notice: 'Товарная позиция удалена.'
+    redirect_to store_path, notice: 'Товарная позиция удалена.'
   end
 
   private

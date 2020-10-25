@@ -2,18 +2,18 @@
 
 <h1>Корзина</h1>
 
-<ol>
-  <% @carts.each do |cart| %>
-    <% if cart.blank? %>
-      <p>Сейчас корзина пустая.</p>
-    <% else %>
+<% unless @carts.empty? %>
+  <ol>
+    <% @carts.each do |cart| %>
       <li>
         <%= link_to 'Показать', cart %> |
         <%= link_to 'Удалить', cart, method: :delete, data: {confirm: 'Вы уверены?'} %>
       </li>
     <% end %>
-  <% end %>
-</ol>
+  </ol>
+<% else %>
+  <p>Сейчас корзина пустая.</p>
+<% end %>
 
 <br>
 

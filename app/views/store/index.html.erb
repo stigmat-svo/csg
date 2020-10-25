@@ -15,7 +15,8 @@
             <%= sanitize(product.description) %>
             <br>
             <span class="price"><%= number_to_currency(product.price) %></span>
-            <%= button_to 'Купить', line_items_path(product_id: product), title: 'Добавить в корзину' %>
+            <%= button_to '', line_items_path(product_id: product), class: 'button_cart',
+                          title: 'Добавить в корзину', remote: true %>
           </div>
         </div>
       <% end %>
@@ -23,7 +24,7 @@
   <% end %>
 
   <br>
- <p><%= link_to 'Админпанель', products_path %></p>
- <p><%= link_to 'Корзина', carts_path %></p>
+  <p><%= link_to 'Админпанель', products_path %></p>
+  <p><%= link_to 'Корзина', carts_path %></p>
 </div>
 

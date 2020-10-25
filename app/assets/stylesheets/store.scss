@@ -5,6 +5,7 @@
     font: 150% sans-serif;
     color: #226;
   }
+
   /* Запись в каталоге store */
   .entry {
     padding: 10px;
@@ -13,12 +14,14 @@
     margin-top: 1em;
     border: 1px solid #77d;
     min-height: 100px;
+
     img {
       width: 80px;
       margin-right: 5px;
       margin-bottom: 5px;
       position: absolute;
     }
+
     h3 {
       font-size: 120%;
       font-family: sans-serif;
@@ -27,15 +30,35 @@
       margin-bottom: 2px;
       color: #227;
     }
+
     p, div.price_line {
       margin-left: 100px;
       margin-top: 0;
       margin-bottom: 0.8em;
     }
+
     .price {
       color: #4444aa;
       font-weight: bold;
       margin-right: 3em;
     }
   }
+}
+
+.button_cart {
+  position: relative;
+  outline: none;
+  margin-top: 10px;
+  float: right;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  background-image: url("cart.svg");
+  border: 0;
+  cursor: pointer;
+}
+
+.button_cart:active {
+  top: .1em;
+  left: .1em;
 }
