@@ -1,7 +1,7 @@
 .button_plus {
   outline: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: transparent;
   background-image: url("plus.svg");
   border: 0;
@@ -9,10 +9,14 @@
 }
 .button_minus {
   outline: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: transparent;
   background-image: url("minus.svg");
   border: 0;
   cursor: pointer;
+}
+.item_quantity {
+  font-size: 150%;
+  font-weight: bold;
 }

@@ -66,7 +66,7 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     if @line_item.quantity > 1
       @line_item.quantity -= 1
-    elsif
+    else
       @line_item.quantity = 0
       @line_item.destroy
     end
@@ -77,12 +77,12 @@ class LineItemsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  # Используйте обратные вызовы, чтобы поделиться общими настройками или ограничениями между действиями..
   def set_line_item
     @line_item = LineItem.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
+  # Разрешить только доверенный параметр "белый список".
   def line_item_params
     params.require(:line_item).permit(:product_id, :cart_id, :quantity)
   end
