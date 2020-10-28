@@ -43,7 +43,7 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   def update
     if @line_item.update(line_item_params)
-      redirect_to @line_item, notice: 'Товарная позиция успешно обновлена.'
+      redirect_to @line_item
     else
       render :edit
     end
@@ -52,8 +52,28 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   def destroy
     @line_item.destroy
-    redirect_to store_path, notice: 'Товарная позиция удалена.'
+    redirect_to store_path
   end
+
+  def add_quantity
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity += 1
+    @line_item.save
+    redirect_to store_path
+  end
+
+  def reduce_quantity
+    @line_item = LineItem.find(params[:id])
+    if @line_item.quantity > 1
+      @line_item.quantity -= 1
+    elsif
+      @line_item.quantity = 0
+      @line_item.destroy
+    end
+    @line_item.save
+    redirect_to store_path
+  end
+
 
   private
 
@@ -64,6 +84,6 @@ class LineItemsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def line_item_params
-    params.require(:line_item).permit(:product_id, :cart_id)
+    params.require(:line_item).permit(:product_id, :cart_id, :quantity)
   end
 end

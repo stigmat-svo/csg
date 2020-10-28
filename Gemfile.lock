@@ -87,6 +87,13 @@ GEM
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     commonjs (0.2.7)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
@@ -340,6 +347,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   carrierwave
+  coffee-rails
   devise
   devise-i18n
   dotenv-rails

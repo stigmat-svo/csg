@@ -1,3 +1,18 @@
-// Place all the styles related to the LineItems controller here.
-// They will automatically be included in application.css.scss.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.button_plus {
+  outline: none;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url("plus.svg");
+  border: 0;
+  cursor: pointer;
+}
+.button_minus {
+  outline: none;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url("minus.svg");
+  border: 0;
+  cursor: pointer;
+}
