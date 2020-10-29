@@ -8,18 +8,27 @@
 <td><%= line_item.product.title %></td>
 
 <td>
-  <%= button_to '-', line_item_reduce_path(:id => line_item), title: 'Уменьшить количество' %>
+  <%= link_to fa_icon("minus-square"), line_item_reduce_path(:id => line_item),
+              style: "color: #70a2ff; font-size: 110%;",
+              method: :post,
+              title: 'Уменьшить количество' %>
 
   <%= line_item.quantity %>
 
-  <%= button_to '+', line_item_add_path(:id => line_item), title: 'Увеличить количество' %>
+  <%= link_to fa_icon("plus-square"), line_item_add_path(:id => line_item),
+              style: "color: #70a2ff; font-size: 110%;",
+              method: :post,
+              title: 'Увеличить количество' %>
 
 </td>
 
 <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
 
-<td><%= link_to fa_icon('trash-o'), line_item_path(line_item),
-                method: :delete, data: {confirm: 'Вы уверены?'}, title: 'Удалить позицию' %></td>
+<td><%= link_to fa_icon("times-circle"), line_item_path(line_item),
+                style: "color: #f44336; font-size: 110%;",
+                method: :delete,
+                data: {confirm: 'Вы уверены?'},
+                title: 'Удалить позицию' %></td>
 </tr>
 
 

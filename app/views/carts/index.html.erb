@@ -1,20 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Корзина</h1>
-
-<% unless @carts.empty? %>
-  <ol>
-    <% @carts.each do |cart| %>
-      <li>
-        <%= link_to 'Показать', cart %> |
-        <%= link_to 'Удалить', cart, method: :delete, data: {confirm: 'Вы уверены?'} %>
-      </li>
-    <% end %>
-  </ol>
-<% else %>
-  <p>Сейчас корзина пустая.</p>
-<% end %>
-
+<ol>
+  <% @carts.each do |cart| %>
+    <li>
+      <%= link_to 'Показать', cart %> |
+      <%= link_to 'Удалить', cart, method: :delete, data: {confirm: 'Вы уверены?'} %>
+    </li>
+  <% end %>
+</ol>
 <br>
 
 <p><%= link_to 'На главную', store_index_path %></p>

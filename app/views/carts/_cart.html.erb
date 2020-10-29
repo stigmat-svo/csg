@@ -1,5 +1,5 @@
 <% unless cart.line_items.empty? %>
-  <h1>Корзина</h1>
+  <h1>Корзина(<%= cart.line_items.length %>)</h1>
   <table>
     <%= render(cart.line_items) %>
     <br>
